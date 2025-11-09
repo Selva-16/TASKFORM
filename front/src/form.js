@@ -17,7 +17,7 @@ function Form() {
     const handleSubmit = async e => {
         e.preventDefault();
         try {
-        await axios.post("http://localhost:5000/api/form", form);
+        await axios.post("https://taskform.onrender.com/api/form", form);
         setStatus("✅ Data submitted successfully!");
         setForm({ name: "", dob: "", message: "" });
         fetchData(); // refresh list after submit
@@ -29,7 +29,7 @@ function Form() {
     // Fetch all data from backend
     const fetchData = async () => {
         try {
-        const res = await axios.get("http://localhost:5000/api/form");
+        const res = await axios.get("https://taskform.onrender.com/api/form");
         setDataList(res.data);
         } catch (err) {
         console.error("Error fetching data:", err);
